@@ -22,6 +22,8 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>OSBundleEnableKextLogging</key>
+	<true/>
 	<key>IOKitPersonalities</key>
 	<dict>
 		<key>SampleEncryptionFilter</key>
@@ -32,6 +34,8 @@
 			<string>com.osxkernel.${PRODUCT_NAME:rfc1034identifier}</string>
 			<key>IOClass</key>
 			<string>com_osxkernel_driver_SampleEncryptionFilter</string>
+			<key>IOKitDebug</key>
+			<integer>65535</integer>
 			<key>IOMatchCategory</key>
 			<string>IOStorage</string>
 			<key>IOProviderClass</key>
