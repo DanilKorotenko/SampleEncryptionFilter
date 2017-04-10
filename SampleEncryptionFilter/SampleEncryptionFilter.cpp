@@ -11,7 +11,9 @@ bool com_osxkernel_driver_SampleEncryptionFilter::start (IOService *provider)
 {
 	if (super::start(provider) == false)
 		return false;
-	
+
+	IOLog("%s[%p]::%s\n", getName(), this, __FUNCTION__);
+
 	m_encryptedMedia = OSDynamicCast(IOMedia, provider);
 	if (m_encryptedMedia == NULL)
 		return false;
@@ -29,11 +31,13 @@ bool com_osxkernel_driver_SampleEncryptionFilter::start (IOService *provider)
 
 void com_osxkernel_driver_SampleEncryptionFilter::stop(IOService* provider)
 {	
+	IOLog("%s[%p]::%s\n", getName(), this, __FUNCTION__);
 	super::stop(provider);
 }
 
 void com_osxkernel_driver_SampleEncryptionFilter::free (void)
 {
+	IOLog("%s[%p]::%s\n", getName(), this, __FUNCTION__);
 	if (m_childMedia != NULL)
 		m_childMedia->release();
 	
@@ -42,6 +46,7 @@ void com_osxkernel_driver_SampleEncryptionFilter::free (void)
 
 IOMedia* com_osxkernel_driver_SampleEncryptionFilter::instantiateMediaObject ()
 {
+	IOLog("%s[%p]::%s\n", getName(), this, __FUNCTION__);
 	IOMedia*	newMedia;
 	
 	newMedia = new IOMedia;
@@ -71,6 +76,7 @@ IOMedia* com_osxkernel_driver_SampleEncryptionFilter::instantiateMediaObject ()
 
 void	com_osxkernel_driver_SampleEncryptionFilter::read (IOService* client, UInt64 byteStart, IOMemoryDescriptor* buffer, IOStorageAttributes* attributes, IOStorageCompletion* completion)
 {
+	IOLog("%s[%p]::%s\n", getName(), this, __FUNCTION__);
 	ReadCompletionParams*	context;
 	IOStorageCompletion		newCompletion;
 	
@@ -153,6 +159,8 @@ bail:
 
 void	com_osxkernel_driver_SampleEncryptionFilter::write (IOService* client, UInt64 byteStart, IOMemoryDescriptor* buffer, IOStorageAttributes* attributes, IOStorageCompletion* completion)
 {
+	IOLog("%s[%p]::%s\n", getName(), this, __FUNCTION__);
+
 	IOMemoryDescriptor*		newDesc;
 	
 	newDesc = encryptBuffer(buffer);
