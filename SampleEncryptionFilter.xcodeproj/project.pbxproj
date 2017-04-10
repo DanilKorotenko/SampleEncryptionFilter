@@ -8,9 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		B1E26F8113EE6CAA001B376A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1E26F7F13EE6CAA001B376A /* InfoPlist.strings */; };
-		B1E26F8313EE6CAA001B376A /* SampleEncryptionFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = B1E26F8213EE6CAA001B376A /* SampleEncryptionFilter.h */; };
 		B1E26F8513EE6CAA001B376A /* SampleEncryptionFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1E26F8413EE6CAA001B376A /* SampleEncryptionFilter.cpp */; };
+		DA15705D1E9BA0DE00FEC293 /* checkKextLoaded.sh in CopyFiles */ = {isa = PBXBuildFile; fileRef = DA1570521E9BA0AF00FEC293 /* checkKextLoaded.sh */; };
+		DA15705E1E9BA0DE00FEC293 /* installKext.sh in CopyFiles */ = {isa = PBXBuildFile; fileRef = DA1570531E9BA0AF00FEC293 /* installKext.sh */; };
+		DA15705F1E9BA0DE00FEC293 /* loadKext.sh in CopyFiles */ = {isa = PBXBuildFile; fileRef = DA1570541E9BA0AF00FEC293 /* loadKext.sh */; };
+		DA1570601E9BA0DE00FEC293 /* removeKext.sh in CopyFiles */ = {isa = PBXBuildFile; fileRef = DA1570551E9BA0AF00FEC293 /* removeKext.sh */; };
+		DA1570611E9BA0DE00FEC293 /* unloadKext.sh in CopyFiles */ = {isa = PBXBuildFile; fileRef = DA1570561E9BA0AF00FEC293 /* unloadKext.sh */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DA15705C1E9BA0D700FEC293 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				DA15705D1E9BA0DE00FEC293 /* checkKextLoaded.sh in CopyFiles */,
+				DA15705E1E9BA0DE00FEC293 /* installKext.sh in CopyFiles */,
+				DA15705F1E9BA0DE00FEC293 /* loadKext.sh in CopyFiles */,
+				DA1570601E9BA0DE00FEC293 /* removeKext.sh in CopyFiles */,
+				DA1570611E9BA0DE00FEC293 /* unloadKext.sh in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B1E26F7713EE6CAA001B376A /* SampleEncryptionFilter.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleEncryptionFilter.kext; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,17 +41,12 @@
 		B1E26F8213EE6CAA001B376A /* SampleEncryptionFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleEncryptionFilter.h; sourceTree = "<group>"; };
 		B1E26F8413EE6CAA001B376A /* SampleEncryptionFilter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SampleEncryptionFilter.cpp; sourceTree = "<group>"; };
 		B1E26F8613EE6CAA001B376A /* SampleEncryptionFilter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SampleEncryptionFilter-Prefix.pch"; sourceTree = "<group>"; };
+		DA1570521E9BA0AF00FEC293 /* checkKextLoaded.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = checkKextLoaded.sh; sourceTree = "<group>"; };
+		DA1570531E9BA0AF00FEC293 /* installKext.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = installKext.sh; sourceTree = "<group>"; };
+		DA1570541E9BA0AF00FEC293 /* loadKext.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = loadKext.sh; sourceTree = "<group>"; };
+		DA1570551E9BA0AF00FEC293 /* removeKext.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = removeKext.sh; sourceTree = "<group>"; };
+		DA1570561E9BA0AF00FEC293 /* unloadKext.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = unloadKext.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		B1E26F7213EE6CAA001B376A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		B1E26F6A13EE6CAA001B376A = {
@@ -69,6 +85,7 @@
 		B1E26F7C13EE6CAA001B376A /* SampleEncryptionFilter */ = {
 			isa = PBXGroup;
 			children = (
+				DA1570511E9BA08C00FEC293 /* Scripts */,
 				B1E26F8213EE6CAA001B376A /* SampleEncryptionFilter.h */,
 				B1E26F8413EE6CAA001B376A /* SampleEncryptionFilter.cpp */,
 				B1E26F7D13EE6CAA001B376A /* Supporting Files */,
@@ -86,18 +103,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-/* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		B1E26F7313EE6CAA001B376A /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B1E26F8313EE6CAA001B376A /* SampleEncryptionFilter.h in Headers */,
+		DA1570511E9BA08C00FEC293 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				DA1570521E9BA0AF00FEC293 /* checkKextLoaded.sh */,
+				DA1570531E9BA0AF00FEC293 /* installKext.sh */,
+				DA1570541E9BA0AF00FEC293 /* loadKext.sh */,
+				DA1570551E9BA0AF00FEC293 /* removeKext.sh */,
+				DA1570561E9BA0AF00FEC293 /* unloadKext.sh */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			path = Scripts;
+			sourceTree = "<group>";
 		};
-/* End PBXHeadersBuildPhase section */
+/* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
 		B1E26F7613EE6CAA001B376A /* SampleEncryptionFilter */ = {
@@ -105,10 +123,8 @@
 			buildConfigurationList = B1E26F8913EE6CAA001B376A /* Build configuration list for PBXNativeTarget "SampleEncryptionFilter" */;
 			buildPhases = (
 				B1E26F7113EE6CAA001B376A /* Sources */,
-				B1E26F7213EE6CAA001B376A /* Frameworks */,
-				B1E26F7313EE6CAA001B376A /* Headers */,
 				B1E26F7413EE6CAA001B376A /* Resources */,
-				B1E26F7513EE6CAA001B376A /* Rez */,
+				DA15705C1E9BA0D700FEC293 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -153,16 +169,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXRezBuildPhase section */
-		B1E26F7513EE6CAA001B376A /* Rez */ = {
-			isa = PBXRezBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXRezBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B1E26F7113EE6CAA001B376A /* Sources */ = {
